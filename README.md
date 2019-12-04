@@ -1,2 +1,2 @@
 # sci-hub Bot
-This is a Bale bot which fetches paper from given sciencedirect url.
+This is a Bale bot for fetching papers from sciencedirect urls.

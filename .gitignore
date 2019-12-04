@@ -128,3 +128,4 @@ dmypy.json
 config.py
 *practice.py
 docker-compose.yml
+*.pdf

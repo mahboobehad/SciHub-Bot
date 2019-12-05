@@ -17,7 +17,7 @@ class SciHubController:
 
     def fetch_paper(self, bot,  update: Update):
         chat_id = update.effective_chat.id
-        url = update.edited_message.text
+        url = update.effective_message.text
         self._save_paper(url)
         self.view.send_paper(chat_id, "output.pdf")
 

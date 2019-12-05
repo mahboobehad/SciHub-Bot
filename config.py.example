@@ -1,0 +1,8 @@
+# In the name of God
+import os
+
+
+class BotConfig:
+    base_file_url = os.environ.get("BASE_FILE_URL", "https://tapi.bale.ai/file/")
+    base_url = os.environ.get("BASE_URL", "https://tapi.bale.ai/")
+    bot_token = os.environ.get("BOT_TOKEN", "")

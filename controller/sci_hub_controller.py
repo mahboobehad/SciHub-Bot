@@ -1,5 +1,4 @@
 # In the name of God
-import datetime
 from io import BytesIO
 
 from scihub import SciHub
@@ -21,8 +20,8 @@ class SciHubController:
     def fetch_paper(self, bot, update: Update):
         chat_id = update.effective_chat.id
         url = update.effective_message.text
-        pdf = self._fetch_pdf(url)
-        self.view.send_paper(chat_id, pdf)
+        pdf, title = self._fetch_pdf(url)
+        self.view.send_paper(chat_id, pdf, title)
 
     @staticmethod
     def _fetch_pdf(url):
@@ -30,5 +29,6 @@ class SciHubController:
         result = hub.fetch(url)
         pdf_bytes = result['pdf']
         file = BytesIO(pdf_bytes)
-        file.name = str(datetime.datetime.now()) + ".pdf"
-        return file
+        title = result['title'].split("|")[1]
+        file.name = result["url"].split("/")[~0].split(".pdf")[0] + ".pdf"
+        return file, title

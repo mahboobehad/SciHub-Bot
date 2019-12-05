@@ -14,4 +14,4 @@ class SciHubView:
         self.bot.send_message(chat_id, text)
 
     def send_paper(self, chat_id, file):
-        self.bot.send_document(chat_id, document=open(file, "rb"))
+        self.bot.send_document(chat_id, document=file)
